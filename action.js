@@ -29,25 +29,6 @@ window.addEventListener('scroll', function () {
 
   })
 
-const fishConfigs = [
-    { element: fish1, verticalRange: 80, duration: 7, direction: 1 },
-    { element: fish2, verticalRange: 110, duration: 8, direction: 1 },
-    { element: fish3, verticalRange: 140, duration: 9, direction: 1 },
-    { element: fish4, verticalRange: 90, duration: 7.5, direction: 1 },
-];
-
-function swimVertically(fish) {
-    const yOffset = fish.direction * fish.verticalRange;
-
-    fish.element.style.transition = `transform ${fish.duration}s ease-in-out`;
-    fish.element.style.transform = `translateY(${yOffset}px)`;
-
-    fish.direction *= -1;
-    setTimeout(() => swimVertically(fish), fish.duration * 1000);
-}
-
-fishConfigs.forEach((fish) => swimVertically(fish));
-
 
 // Contains the link for all social media handles
 var links = document.getElementsByClassName("social-media");

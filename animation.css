@@ -12,6 +12,13 @@
         --transform-x: 120vw;
 }
 
+@media screen and (max-width: 400px) {
+        .bubbles {
+                --transform-duration: 15s;
+                --transform-x: 200vw;
+        }
+}
+
 .bubbles img {
 	opacity: 0;
 	animation-name: bubble;

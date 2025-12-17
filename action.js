@@ -1,15 +1,3 @@
-// Select the class bubble
-const time = document.getElementsByClassName('bubbles')[0];
-
-if (screen.width < 400) {
-
-    //Change transformation duration and translation distance for mobile view
-    time.style.setProperty('--transform-duration', '15s')
-    time.style.setProperty('--transform-x', '200vw')
-}
-
-
-
 window.addEventListener('scroll', function () {
 
     let value = window.scrollY;   //Get Scroll Value (Mobile - High)

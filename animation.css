@@ -1,15 +1,22 @@
 /* Code for The Bubble Animation */
 
 .bubbles {
-	display: flex;
-	width: 100%;
-	justify-content: space-around;
-	position: absolute;
-	bottom: 0;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        position: absolute;
+        bottom: 0;
 
-	/* Default values for duration and y value (For Desktop) */
-	--transform-duration: 6s;
-	--transform-y: -300vh;
+        /* Default values for duration and x value (For Desktop) */
+        --transform-duration: 6s;
+        --transform-x: 120vw;
+}
+
+@media screen and (max-width: 400px) {
+        .bubbles {
+                --transform-duration: 15s;
+                --transform-x: 200vw;
+        }
 }
 
 .bubbles img {
@@ -21,19 +28,19 @@
 }
 
 @keyframes bubble {
-	0% {
-		transform: translateY(0);
-		opacity: 0;
-	}
+        0% {
+                transform: translateX(0);
+                opacity: 0;
+        }
 
-	10% {
-		opacity: 1;
-	}
+        10% {
+                opacity: 1;
+        }
 
-	100% {
-		transform: translateY(var(--transform-y));
-		opacity: 1;
-	}
+        100% {
+                transform: translateX(var(--transform-x));
+                opacity: 1;
+        }
 }
 
 /* Delay for each bubble separately (Desktop View)*/

@@ -42,28 +42,27 @@ window.addEventListener('scroll', function () {
   })
 
 const fishConfigs = [
-    { element: fish1, horizontalRange: 200, verticalRange: 50 },
-    { element: fish2, horizontalRange: 220, verticalRange: 90 },
-    { element: fish3, horizontalRange: 240, verticalRange: 120 },
-    { element: fish4, horizontalRange: 260, verticalRange: 60 },
+    { element: fish1, verticalRange: 80 },
+    { element: fish2, verticalRange: 110 },
+    { element: fish3, verticalRange: 140 },
+    { element: fish4, verticalRange: 90 },
 ];
 
 function randomBetween(min, max) {
     return Math.random() * (max - min) + min;
 }
 
-function swimFreely(fish) {
-    const xOffset = randomBetween(-fish.horizontalRange, fish.horizontalRange);
+function swimVertically(fish) {
     const yOffset = randomBetween(-fish.verticalRange, fish.verticalRange);
     const duration = randomBetween(6, 11);
 
     fish.element.style.transition = `transform ${duration}s ease-in-out`;
-    fish.element.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+    fish.element.style.transform = `translateY(${yOffset}px)`;
 
-    setTimeout(() => swimFreely(fish), duration * 1000);
+    setTimeout(() => swimVertically(fish), duration * 1000);
 }
 
-fishConfigs.forEach((fish) => swimFreely(fish));
+fishConfigs.forEach((fish) => swimVertically(fish));
 
 
 // Contains the link for all social media handles

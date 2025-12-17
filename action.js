@@ -29,29 +29,6 @@ window.addEventListener('scroll', function () {
 
   })
 
-const fishConfigs = [
-    { element: fish1, verticalRange: 80 },
-    { element: fish2, verticalRange: 110 },
-    { element: fish3, verticalRange: 140 },
-    { element: fish4, verticalRange: 90 },
-];
-
-function randomBetween(min, max) {
-    return Math.random() * (max - min) + min;
-}
-
-function swimVertically(fish) {
-    const yOffset = randomBetween(-fish.verticalRange, fish.verticalRange);
-    const duration = randomBetween(6, 11);
-
-    fish.element.style.transition = `transform ${duration}s ease-in-out`;
-    fish.element.style.transform = `translateY(${yOffset}px)`;
-
-    setTimeout(() => swimVertically(fish), duration * 1000);
-}
-
-fishConfigs.forEach((fish) => swimVertically(fish));
-
 
 // Contains the link for all social media handles
 var links = document.getElementsByClassName("social-media");

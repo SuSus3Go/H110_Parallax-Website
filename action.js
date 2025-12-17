@@ -3,9 +3,9 @@ const time = document.getElementsByClassName('bubbles')[0];
 
 if (screen.width < 400) {
 
-    //Change transformation duration and translatey for mobile view
+    //Change transformation duration and translation distance for mobile view
     time.style.setProperty('--transform-duration', '15s')
-    time.style.setProperty('--transform-y', '-700vh')
+    time.style.setProperty('--transform-x', '200vw')
 }
 
 
